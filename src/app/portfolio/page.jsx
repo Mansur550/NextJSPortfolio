@@ -1,4 +1,4 @@
-const PortfoioPage = () => {
+const PortfolioPage = () => {
     return (
         <div className=''>PortfolioPage</div>
     )
