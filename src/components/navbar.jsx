@@ -72,7 +72,7 @@ const Navbar = () => {
 
             {/* logo */}
 
-            <div className=' lg:flex '>
+            <div className=' lg:flex'>
                 <Link href="/"
                     className='text-sm bg-black rounded-md p-1 font-semibold
                 flex items-center justify-center'>
