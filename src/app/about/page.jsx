@@ -10,16 +10,19 @@ const AboutPage = () => {
             transition={{ duration: 1 }}
         >
             {/* Container */}
-            <div className="h-full">
+            <div className="h-full overflow-scroll md:flex lg:flex">
 
                 {/* text Container */}
-                <div className="px-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
+                <div className="px-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-2/3 xl:1/2">
 
                     {/* biography */}
                     <div className="flex flex-col gap-12 justify-center">
                         <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
-                        <p className="text-lg">I am a Computer Science & Engineering student at AIUB with a passion for architecting scalable,
-                            full-stack solutions. My approach to development sits at the intersection of robust backend logic
+                        <p className="text-lg text-justify">
+                            I am a Computer Science & Engineering student at
+                            AIUB with a passion for architecting scalable,
+                            full-stack solutions. My approach to development
+                            sits at the intersection of robust backend logic
                             and intuitive frontend experiences. <br /> <br />
                             Using a modern stack of Next.js, NestJS, and PostgreSQL, I build applications that don't just
                             work—they perform. My experience ranges from developing role-based resource platforms to integrating
@@ -52,16 +55,56 @@ const AboutPage = () => {
 
 
                     {/* Skills */}
-                    <div className="flex flex-col gap-12 justify-center">
-                        <h1 className="font-bold text-2xl">SKILLSs</h1>
+                    <div className="flex flex-col gap-12 justify-center pb-48">
+
+                        <h1 className="font-bold text-2xl">SKILLS</h1>
                         {/* Skills List */}
-                        <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
+                        <div className="flex gap-4 flex-wrap">
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                JavaScript
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                TypeScript
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                React.js
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                Next.js
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                Tailwind CSS
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                Node.js
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                Nest.js
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                PostgreSQL
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                PostMan
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                C++
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                Python
+                            </div>
+                            <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                R
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
 
                 {/* SVG continer */}
-                <div className="hidden"></div>
+                <div className="hidden lg:block w-1/3 xl:1/2"></div>
             </div>
         </motion.div >
     );
