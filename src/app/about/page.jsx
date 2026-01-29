@@ -10,7 +10,7 @@ const AboutPage = () => {
             transition={{ duration: 1 }}
         >
             {/* Container */}
-            <div className="">
+            <div className="h-full">
 
                 {/* text Container */}
                 <div className="px-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
@@ -55,7 +55,7 @@ const AboutPage = () => {
                     <div className="flex flex-col gap-12 justify-center">
                         <h1 className="font-bold text-2xl">SKILLSs</h1>
                         {/* Skills List */}
-                        <div className="">JavaScript</div>
+                        <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
                     </div>
                 </div>
 
