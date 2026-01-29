@@ -1,4 +1,5 @@
 "use client";
+import Brain from "@/components/brain";
 import { motion } from "framer-motion";
 const PortfolioPage = () => {
     return (
@@ -7,6 +8,7 @@ const PortfolioPage = () => {
             animate={{ y: "0%" }}
             transition={{ duration: 1 }}>
             Portfolio
+
         </motion.div >
     );
 };

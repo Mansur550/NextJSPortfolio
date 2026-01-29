@@ -1,8 +1,17 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import Brain from "@/components/Brain";
+import { useScroll } from "framer-motion";
+import { useRef } from "react";
 
 
 const AboutPage = () => {
+    const containerRef = useRef()
+    const { scrollYProgress } = useScroll({ container: containerRef });
+
+    const skillRef = useRef();
+    const isSkillRefInView = useInView(skillRef);
+
     return (
         <motion.div className="h-full"
             initial={{ y: "-200vh" }}
@@ -10,10 +19,10 @@ const AboutPage = () => {
             transition={{ duration: 1 }}
         >
             {/* Container */}
-            <div className="h-full overflow-scroll md:flex lg:flex">
+            <div className="h-full overflow-scroll md:flex lg:flex" ref={containerRef}>
 
                 {/* text Container */}
-                <div className="px-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 w-2/3 xl:1/2">
+                <div className="px-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2">
 
                     {/* biography */}
                     <div className="flex flex-col gap-12 justify-center">
@@ -55,9 +64,13 @@ const AboutPage = () => {
 
 
                     {/* Skills */}
-                    <div className="flex flex-col gap-12 justify-center pb-48">
+                    <div className="flex flex-col gap-12 justify-center pb-48" ref={skillRef}>
 
-                        <h1 className="font-bold text-2xl">SKILLS</h1>
+                        <motion.h1
+                            initial={{ x: -"300px" }}
+                            animate={isSkillRefInView ? { x: 0 } : {}}
+                            transition={{ delay: 0.3 }}
+                            className="font-bold text-2xl">SKILLS</motion.h1>
                         {/* Skills List */}
                         <div className="flex gap-4 flex-wrap">
                             <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
@@ -104,7 +117,11 @@ const AboutPage = () => {
 
 
                 {/* SVG continer */}
-                <div className="hidden lg:block w-1/3 xl:1/2"></div>
+                <div className="hidden lg:block w-1/3  sticky top-0 z-30 xl:w-1/2">
+
+                    <Brain scrollYProgress={scrollYProgress} />
+
+                </div>
             </div>
         </motion.div >
     );
