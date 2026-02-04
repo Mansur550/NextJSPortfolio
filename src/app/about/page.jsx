@@ -10,7 +10,15 @@ const AboutPage = () => {
     const { scrollYProgress } = useScroll({ container: containerRef });
 
     const skillRef = useRef();
-    const isSkillRefInView = useInView(skillRef);
+    //const isSkillRefInView = useInView(skillRef);
+
+    const isSkillRefInView = useInView(skillRef, {
+        root: containerRef,
+        margin: "-100px",
+        // once: true
+    });
+
+
 
     return (
         <motion.div className="h-full"
@@ -64,15 +72,25 @@ const AboutPage = () => {
 
 
                     {/* Skills */}
-                    <div className="flex flex-col gap-12 justify-center pb-48" ref={skillRef}>
+                    <div
+
+                        className="flex flex-col gap-12 justify-center pb-48" ref={skillRef}>
 
                         <motion.h1
-                            initial={{ x: -"300px" }}
-                            animate={isSkillRefInView ? { x: 0 } : {}}
-                            transition={{ delay: 0.3 }}
-                            className="font-bold text-2xl">SKILLS</motion.h1>
+                            initial={{ x: -300, opacity: 0 }}
+                            animate={isSkillRefInView ? { x: 0, opacity: 1 } : {}}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="font-bold text-2xl">
+
+                            SKILLS
+                        </motion.h1>
                         {/* Skills List */}
-                        <div className="flex gap-4 flex-wrap">
+                        <motion.div
+                            initial={{ x: -300, opacity: 0 }}
+                            animate={isSkillRefInView ? { x: 0, opacity: 1 } : {}}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+
+                            className="flex gap-4 flex-wrap font-bold">
                             <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                                 JavaScript
                             </div>
@@ -109,7 +127,7 @@ const AboutPage = () => {
                             <div className=" rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                                 R
                             </div>
-                        </div>
+                        </motion.div>
 
 
                     </div>
@@ -117,8 +135,8 @@ const AboutPage = () => {
 
 
                 {/* SVG continer */}
-                <div className="hidden lg:block w-1/3  sticky top-0 z-30 xl:w-1/2">
-
+                {/* <div className="hidden lg:block w-1/3  sticky top-0 z-30 xl:w-1/2"> */}
+                <div className="hidden lg:block w-1/3 xl:w-1/2 sticky top-0 h-screen z-30">
                     <Brain scrollYProgress={scrollYProgress} />
 
                 </div>

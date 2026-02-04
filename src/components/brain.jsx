@@ -2,6 +2,16 @@
 import Link from "next/link";
 import { motion, useTransform } from "framer-motion";
 
+
+
+// const Brain = ({ scrollYProgress }) => {
+//     const ref = useRef(null);
+
+//     const { scrollYProgress } = useScroll({
+//         target: ref,
+//         offset: ["start end", "end start"],
+//     });
+
 const Brain = ({ scrollYProgress }) => {
     const rotatesForward1 = useTransform(scrollYProgress, [0, 1], [0, 360]);
     const rotatesForward2 = useTransform(scrollYProgress, [0, 1], [0, 180]);
